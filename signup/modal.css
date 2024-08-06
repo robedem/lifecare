@@ -1,0 +1,81 @@
+.modal {
+    display: none;
+    /* Hide the modal by default */
+    position: fixed;
+    /* Position the modal fixed */
+    z-index: 1;
+    /* Ensure the modal is on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scrolling if needed */
+    background: #68A4CA;
+    /* Darken the background */
+    display: flex;
+    /* Add flexbox to center the modal */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.modal-content {
+    background: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    font-size: 20px
+}
+
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer
+}
+
+#ok-button {
+    background-color: #68a4ca;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    display: block
+}
+
+#ok-button:hover {
+    background: #68A4CA
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .modal-content {
+        width: 80%;
+        /* Increase width for smaller screens */
+        margin: 10% auto;
+        /* Adjust margin for smaller screens */
+    }
+
+    .close {
+        font-size: 24px;
+        /* Reduce font size for smaller screens */
+    }
+
+    #ok-button {
+        padding: 8px 15px;
+        /* Reduce padding for smaller screens */
+    }
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign-up.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+
+    <title>SIGN IN PG</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header" class="fixed-top d-flex align-items-center header-scrolled">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="/index.html"><img src="/assets/img/temp-logo.png" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="active " href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                    <li><a href="/services.html">Services</a></li>
+                    <li><a href="/team.html">Team</a></li>
+                    <li><a href="/contact.html">Contact Us</a></li>
+                    <li><a href="sign_in.html" class="btn-get-started animate__animated animate__fadeInUp">Get started</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+
+    <!-- Main Content -->
+    <div class="main">
+        <div class="sign-in">
+            <div class="text-wrapper">
+                <span id="form-container">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="social"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <p>or use your email for registration</p>
+                    <input type="text" name="txt" placeholder="Name" required />
+                    <input type="email" name="email" placeholder="Email" required />
+                    <input type="password" pattern="(?=.*[A-Z]).{8,}" name="pwd" placeholder="Password" id="password" required />
+                    <div id="pwd-error"></div>
+                    <button id="sign-up-btn">Sign Up</button>
+                </span>
+                <span id="confirmation-container" style="display:none;">
+                    <h1>Email Confirmation</h1>
+                    <p>Enter the 4-digit code sent to your email</p>
+                    <div class="code-container">
+                        <input type="text" maxlength="1" class="code-input" required />
+                        <input type="text" maxlength="1" class="code-input" required />
+                        <input type="text" maxlength="1" class="code-input" required />
+                        <input type="text" maxlength="1" class="code-input" required />
+                    </div>
+                    <button id="next-btn">Next</button>
+                </span>
+            </div>
+            <div class="sign-up">
+                <h2>Welcome Back!</h2>
+                <p>Enter your personal details to use all features</p>
+                <button class="sgn-up" id="sign-in-btn" onclick="window.location.href='sign_in.html'">SIGN IN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('pwd-error');
+        const signUpBtn = document.getElementById('sign-up-btn');
+        const formContainer = document.getElementById('form-container');
+        const confirmationContainer = document.getElementById('confirmation-container');
+        const signInBtn = document.getElementById('sign-in-btn');
+
+        passwordInput.addEventListener('input', () => {
+            const password = passwordInput.value;
+            let errorMessage = '';
+            if (!/[A-Z]/.test(password)) { errorMessage += '. Uppercase letter is required <br>'; }
+            if (!/[a-z]/.test(password)) { errorMessage += '. Lowercase letter is required <br>'; }
+            if (!/\d/.test(password)) { errorMessage += '. Digit is required <br>'; }
+            if (!/[!@#$%^&*()_+\-=\]{}:':"\\|,.<>?]/.test(password)) { errorMessage += '. Special character is required <br>'; }
+            if (password.length < 8) { errorMessage += '. Minimum 8 characters required <br>'; }
+            passwordError.innerHTML = errorMessage;
+        });
+
+        signUpBtn.addEventListener('click', () => {
+            formContainer.style.display = 'none';
+            confirmationContainer.style.display = 'flex';
+            signInBtn.disabled = true;
+            signInBtn.classList.add('disabled');
+        });
+    </script>
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>
