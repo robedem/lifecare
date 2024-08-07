@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Sign-Up</title>
+  <link rel="stylesheet" href="new.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="temp-logo.png" alt="Logo"></a>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="sign_in.html" class="cta">Get started</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <form id="company-signup-form">
+      <h2>Complete profile</h2>
+      
+      <section>
+        <h3>Basic Information</h3>
+        <label for="company-name">Company Name:</label>
+        <input type="text" id="company-name" name="company-name" required>
+
+        <label for="company-email">Company Email:</label>
+        <input type="email" id="company-email" name="company-email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+      </section>
+
+      <section>
+        <h3>Contact Information</h3>
+        <label for="contact-name">Contact Person’s Name:</label>
+        <input type="text" id="contact-name" name="contact-name" required>
+
+        <label for="contact-title">Contact Person’s Job Title:</label>
+        <input type="text" id="contact-title" name="contact-title" required>
+
+        <label for="contact-email">Contact Person’s Email:</label>
+        <input type="email" id="contact-email" name="contact-email" required>
+
+        <label for="contact-phone">Contact Person’s Phone Number:</label>
+        <input type="tel" id="contact-phone" name="contact-phone" required>
+      </section>
+
+      <section>
+        <h3>Company Details</h3>
+        <label for="website">Company Website:</label>
+        <input type="url" id="website" name="website" required>
+
+        <label for="address">Company Address:</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State/Province:</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required>
+
+        <label for="postal-code">Postal Code:</label>
+        <input type="text" id="postal-code" name="postal-code" required>
+      </section>
+
+      <section>
+        <h3>Company Description</h3>
+        <label for="industry">Industry:</label>
+        <input type="text" id="industry" name="industry" required>
+
+        <label for="employees">Number of Employees:</label>
+        <input type="number" id="employees" name="employees" required>
+
+        <label for="description">Brief Description:</label>
+        <textarea id="description" name="description" required></textarea>
+      </section>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</body>
+</html>
