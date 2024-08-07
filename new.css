@@ -99,7 +99,7 @@ header {
 }
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -110,7 +110,7 @@ body {
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: #1e4356;
     border-radius: 8px;
   }
   
@@ -152,6 +152,13 @@ body {
     height: 100px;
     resize: none;
   }
+
+  input:focus {
+    border-color: #1e4356; /* Change to your desired color */
+    outline: none; /* Optional: Removes the default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Optional: Adds a shadow effect */
+  }
+
   
   button[type="submit"] {
     padding: 10px;
@@ -191,4 +198,3 @@ body {
       font-size: 14px;
     }
 }
-  
