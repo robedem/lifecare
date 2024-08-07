@@ -147,11 +147,7 @@ body {
   
   button[type="submit"] {
     padding: 10px;
-<<<<<<< HEAD
     background-color: #68A4CA;
-=======
-    background-color: #1e4356;
->>>>>>> updates
     color: white;
     border: none;
     border-radius: 4px;
@@ -160,11 +156,7 @@ body {
   }
   
   button[type="submit"]:hover {
-<<<<<<< HEAD
     background-color: #333;
-=======
-    background-color: #1e4356;
->>>>>>> updates
   }
   
   @media (max-width: 600px) {
