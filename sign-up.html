@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sign-up.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-    <title>SIGN IN PG</title>
+    <title>SIGN UP</title>
 </head>
 
 <body>
@@ -42,10 +42,9 @@
                         <a href="#" class="social"><i class="fa-brands fa-linkedin-in"></i></a>
                     </div>
                     <p>or use your email for registration</p>
-                    <input type="text" name="txt" placeholder="Name" required />
-                    <input type="email" name="email" placeholder="Email" required />
-                    <input type="password" pattern="(?=.*[A-Z]).{8,}" name="pwd" placeholder="Password" id="password"
-                        required />
+                    <input type="text" id="name" placeholder="Name" required />
+                    <input type="email" id="email" placeholder="Email" required />
+                    <input type="password" id="password" pattern="(?=.*[A-Z]).{8,}" placeholder="Password" required />
                     <div id="pwd-error"></div>
                     <button id="sign-up-btn">Sign Up</button>
                 </span>
@@ -67,33 +66,38 @@
                 <button class="sgn-up" id="sign-in-btn" onclick="window.location.href='sign_in.html'">SIGN IN</button>
             </div>
         </div>
+        <!-- Help Button -->
+        <div id="help-button">
+            <i class="fa fa-question-circle" aria-hidden="true"></i> Help
+        </div>
+
+        <!-- Help Section -->
+        <div id="help-section" style="display: none;">
+            <h2>Contact Us</h2>
+            <p>Hi there, Sorry, we aren't online at the moment. Leave a message, and we'll get back to you.</p>
+            </p>
+            <form>
+                <label for="help-name">Name</label>
+                <input type="text" id="help-name" name="name">
+                
+                <label for="help-email">Email</label>
+                <input type="email" id="help-email" name="email">
+                
+                <label for="help-message">Message</label>
+                <textarea id="help-message" name="message"></textarea>
+                
+                <button type="submit">Send message</button>
+            </form>
+            <div class="contact-us">
+                <h3>Connect with us:</h3>
+                <a href="https://wa.me/yourwhatsapplink" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/yourfacebooklink" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/yourtwitterlink" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/yourinstagramlink" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
     </div>
-    <script type="text/javascript">
-        const passwordInput = document.getElementById('password');
-        const passwordError = document.getElementById('pwd-error');
-        const signUpBtn = document.getElementById('sign-up-btn');
-        const formContainer = document.getElementById('form-container');
-        const confirmationContainer = document.getElementById('confirmation-container');
-        const signInBtn = document.getElementById('sign-in-btn');
-
-        passwordInput.addEventListener('input', () => {
-            const password = passwordInput.value;
-            let errorMessage = '';
-            if (!/[A-Z]/.test(password)) { errorMessage += '. Uppercase letter is required <br>'; }
-            if (!/[a-z]/.test(password)) { errorMessage += '. Lowercase letter is required <br>'; }
-            if (!/\d/.test(password)) { errorMessage += '. Digit is required <br>'; }
-            if (!/[!@#$%^&*()_+\-=\]{}:':"\\|,.<>?]/.test(password)) { errorMessage += '. Special character is required <br>'; }
-            if (password.length < 8) { errorMessage += '. Minimum 8 characters required <br>'; }
-            passwordError.innerHTML = errorMessage;
-        });
-
-        signUpBtn.addEventListener('click', () => {
-            formContainer.style.display = 'none';
-            confirmationContainer.style.display = 'flex';
-            signInBtn.disabled = true;
-            signInBtn.classList.add('disabled');
-        });
-    </script>
     <script src="script.js"></script>
 </body>
 
